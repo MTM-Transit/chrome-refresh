@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Dashboard Auto Refresh & Click",
+    "version": "1.0",
+    "description": "Automatically refresh pages and click buttons at specified intervals",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }]
+}
